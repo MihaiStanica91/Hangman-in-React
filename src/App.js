@@ -1,23 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react';
+import WordInput from "./components/WordInput"
 
 function App() {
+  
+  const [word, setWord] = useState('');
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1 className="Title">Hangman</h1>
+      <div>
+        {<WordInput addNewWord = {setWord} currWord = {word}/>}
+      </div>
     </div>
   );
 }
